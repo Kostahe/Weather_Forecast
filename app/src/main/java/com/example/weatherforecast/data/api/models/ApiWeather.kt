@@ -7,9 +7,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ApiWeather(
     @Json(name = "current_weather")
-    val apiCurrentWeather: ApiCurrentWeather,
+    val currentWeather: ApiCurrentWeather,
     @Json(name = "daily")
-    val apiDaily: ApiDaily,
+    val daily: ApiDaily,
     @Json(name = "daily_units")
     val apiDailyUnits: ApiDailyUnits,
     @Json(name = "elevation")
@@ -17,7 +17,7 @@ data class ApiWeather(
     @Json(name = "generationtime_ms")
     val generationTimeMs: Double,
     @Json(name = "hourly")
-    val apiHourly: ApiHourly,
+    val hourly: ApiHourly,
     @Json(name = "hourly_units")
     val apiHourlyUnits: ApiHourlyUnits,
     @Json(name = "latitude")

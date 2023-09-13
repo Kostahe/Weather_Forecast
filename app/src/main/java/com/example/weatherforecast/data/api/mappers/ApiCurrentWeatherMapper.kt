@@ -6,7 +6,7 @@ import com.example.weatherforecast.domain.models.WeatherStatus
 import com.example.weatherforecast.utils.Util
 import javax.inject.Inject
 
-class CurrentWeatherMapper @Inject constructor(): ApiMapper<CurrentWeather, ApiCurrentWeather>{
+class ApiCurrentWeatherMapper @Inject constructor(): ApiMapper<CurrentWeather, ApiCurrentWeather>{
     override fun mapToDomain(apiEntity: ApiCurrentWeather): CurrentWeather {
         return CurrentWeather(
             isDay = apiEntity.isDay != 0,
