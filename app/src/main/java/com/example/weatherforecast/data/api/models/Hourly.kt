@@ -13,7 +13,7 @@ data class Hourly(
     @Json(name = "temperature_2m")
     val temperature: List<Double>,
     @Json(name = "time")
-    val time: List<Int>,
+    val time: List<Long>,
     @Json(name = "weathercode")
     val weatherCode: List<Int>,
     @Json(name = "windspeed_10m")

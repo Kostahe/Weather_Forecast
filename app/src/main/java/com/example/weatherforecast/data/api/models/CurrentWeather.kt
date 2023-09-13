@@ -11,11 +11,11 @@ data class CurrentWeather(
     @Json(name = "temperature")
     val temperature: Double,
     @Json(name = "time")
-    val time: Int,
+    val time: Long,
     @Json(name = "weathercode")
     val weatherCode: Int,
     @Json(name = "winddirection")
-    val windDirection: Int,
+    val windDirection: Double,
     @Json(name = "windspeed")
     val windSpeed: Double
 )
