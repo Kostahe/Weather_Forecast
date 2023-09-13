@@ -5,6 +5,7 @@ data class Hourly(
     private val relativeHumidity: List<Int>,
     private val temperature: List<Double>,
     private val time: List<String>,
+    private val day: List<String>,
     private val weatherStatus: List<WeatherStatus>,
     private val windSpeed: List<Double>
 ) {
@@ -18,6 +19,7 @@ data class Hourly(
                         relativeHumidity = relativeHumidity[i],
                         temperature = temperature[i],
                         time = time[i],
+                        day = day[i],
                         weatherStatus = weatherStatus[i],
                         windSpeed = windSpeed[i]
                     )
@@ -31,6 +33,7 @@ data class Hourly(
         val relativeHumidity: Int,
         val temperature: Double,
         val time: String,
+        val day: String,
         val weatherStatus: WeatherStatus,
         val windSpeed: Double
     )

@@ -1,11 +1,32 @@
 package com.example.weatherforecast.utils
 
 import com.example.weatherforecast.domain.models.WeatherStatus
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 object Util {
+    private val DIRECTIONS = listOf(
+        "North",
+        "North East",
+        "East",
+        "South East",
+        "South",
+        "South West",
+        "West",
+        "North West"
+    )
 
-    fun getWeatherInfo(code: Int): WeatherStatus {
-        return when(code) {
+    fun formatTime(pattern: String, time: Long): String {
+        val sdf = SimpleDateFormat(pattern, Locale.getDefault())
+        return sdf.format(time*1000)
+    }
+
+    fun getWindDirection(windDirection: Double): String {
+        return DIRECTIONS[(windDirection % 360 / 45 % 8).toInt()]
+    }
+
+    fun getWeatherStatus(weatherCode: Int): WeatherStatus {
+        return when(weatherCode) {
             0 -> WeatherStatus.ClearSky
             1 -> WeatherStatus.MainlyClear
             2 -> WeatherStatus.PartlyCloudy
