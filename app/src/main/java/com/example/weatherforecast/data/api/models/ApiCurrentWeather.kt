@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class CurrentWeather(
+data class ApiCurrentWeather(
     @Json(name = "is_day")
     val isDay: Int,
     @Json(name = "temperature")
