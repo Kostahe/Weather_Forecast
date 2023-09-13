@@ -15,7 +15,7 @@ data class WeatherApi(
     @Json(name = "elevation")
     val elevation: Double,
     @Json(name = "generationtime_ms")
-    val generationtimeMs: Double,
+    val generationTimeMs: Double,
     @Json(name = "hourly")
     val hourly: Hourly,
     @Json(name = "hourly_units")

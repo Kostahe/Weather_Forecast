@@ -9,13 +9,13 @@ data class HourlyUnits(
     @Json(name = "precipitation_probability")
     val precipitationProbability: String,
     @Json(name = "relativehumidity_2m")
-    val relativehumidity2m: String,
+    val relativeHumidity: String,
     @Json(name = "temperature_2m")
-    val temperature2m: String,
+    val temperature: String,
     @Json(name = "time")
     val time: String,
     @Json(name = "weathercode")
-    val weathercode: String,
+    val weatherCode: String,
     @Json(name = "windspeed_10m")
-    val windspeed10m: String
+    val windSpeed: String
 )
