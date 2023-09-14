@@ -2,7 +2,6 @@ package com.example.weatherforecast.domain.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.ui.res.stringResource
 import com.example.weatherforecast.R
 
 sealed class WeatherStatus(

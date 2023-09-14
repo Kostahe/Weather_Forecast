@@ -2,7 +2,6 @@ package com.example.weatherforecast.data.api.mappers
 
 import com.example.weatherforecast.data.api.models.ApiDaily
 import com.example.weatherforecast.domain.models.Daily
-import com.example.weatherforecast.domain.models.Weather
 import com.example.weatherforecast.domain.models.WeatherStatus
 import com.example.weatherforecast.utils.Util
 import javax.inject.Inject
