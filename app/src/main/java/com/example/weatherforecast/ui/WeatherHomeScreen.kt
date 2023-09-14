@@ -1,9 +1,13 @@
 package com.example.weatherforecast.ui
 
 import android.util.Log
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.weatherforecast.domain.models.CurrentWeather
 import com.example.weatherforecast.domain.repository.State
@@ -21,12 +25,17 @@ fun WeatherHomeScreen() {
     val currentWeather = state.weather.data?.currentWeather
     when(weatherState) {
         is State.Loading -> {
-            CircularProgressIndicator(
+            Box(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                CircularProgressIndicator(
+                    modifier = Modifier.align(Alignment.Center)
+                )
+            }
 
-            )
         }
         is State.Success -> {
-            Text(text = "Succes")
+            Text(text = "Success")
         }
         is State.Error -> {
             Text(text = "Error")
