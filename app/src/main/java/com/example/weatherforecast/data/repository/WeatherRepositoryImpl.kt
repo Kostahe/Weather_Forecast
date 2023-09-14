@@ -25,6 +25,4 @@ class WeatherRepositoryImpl @Inject constructor(
             State.Error(e.message.orEmpty())
         }
     }
-
-
 }

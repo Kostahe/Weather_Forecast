@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ApiHourlyUnits(
     @Json(name = "precipitation_probability")
-    val precipitationProbability: String,
+    val precipitationprobability: String,
     @Json(name = "relativehumidity_2m")
     val relativeHumidity: String,
     @Json(name = "temperature_2m")
