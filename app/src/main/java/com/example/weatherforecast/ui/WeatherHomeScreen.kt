@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
@@ -27,14 +26,8 @@ import com.example.weatherforecast.domain.repository.State
 fun WeatherHomeScreen() {
     val viewModel: WeatherViewModel = viewModel()
     val state = viewModel.state
-    val weatherState = state.weather
 
-
-
-    val weatherHourly = state.weather.data?.hourly?.weatherInfo ?: emptyList()
-    val weatherDaily = state.weather.data?.daily?.weatherInfo ?: emptyList()
-    val currentWeather = state.weather.data?.currentWeather
-    when(weatherState) {
+    when(val weatherState = state.weather) {
         is State.Loading -> {
             Box(
                 modifier = Modifier.fillMaxSize()
@@ -45,7 +38,12 @@ fun WeatherHomeScreen() {
             }
         }
         is State.Success -> {
-            Text(text = "Success")
+            Column(
+                Modifier.fillMaxSize()
+            ) {
+                WeatherCurrentWeatherScreen(state = state)
+
+            }
         }
         is State.Error -> {
             Column(
