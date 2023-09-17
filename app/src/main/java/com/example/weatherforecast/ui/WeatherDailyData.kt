@@ -42,7 +42,9 @@ fun WeatherDailyDataItem(
         modifier = modifier.width(80.dp)
             .height(100.dp)
     ) {
-        Text(text = weatherInfo.time)
+        Text(
+            text = weatherInfo.time,
+        )
         Image(
             painter = painterResource(id = weatherInfo.weatherStatus.iconRes),
             contentDescription = stringResource(id = weatherInfo.weatherStatus.weatherDesc),
@@ -50,7 +52,6 @@ fun WeatherDailyDataItem(
         )
         Text(
             text = "${weatherInfo.temperatureMax}°C",
-            fontWeight = FontWeight.Bold
         )
     }
 }
