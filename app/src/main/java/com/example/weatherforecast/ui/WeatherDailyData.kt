@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.weatherforecast.domain.models.Daily
 
@@ -47,6 +48,9 @@ fun WeatherDailyDataItem(
             contentDescription = stringResource(id = weatherInfo.weatherStatus.weatherDesc),
             modifier = modifier.width(40.dp)
         )
-        Text(text = "${weatherInfo.temperatureMax}°C")
+        Text(
+            text = "${weatherInfo.temperatureMax}°C",
+            fontWeight = FontWeight.Bold
+        )
     }
 }
