@@ -42,7 +42,7 @@ fun WeatherHomeScreen() {
                 Modifier.fillMaxSize()
             ) {
                 WeatherCurrentWeatherScreen(state = state)
-
+                WeatherDailyData(state = state)
             }
         }
         is State.Error -> {
