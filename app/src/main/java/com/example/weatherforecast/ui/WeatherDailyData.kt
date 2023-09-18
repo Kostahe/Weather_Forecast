@@ -54,7 +54,6 @@ fun WeatherDailyItem(
             contentDescription = stringResource(id = weatherInfo.weatherStatus.weatherDesc),
             modifier = Modifier.size(40.dp)
         )
-        Text(text = stringResource(id = weatherInfo.weatherStatus.weatherDesc))
         Text(text = "${weatherInfo.temperatureMin} - ${weatherInfo.temperatureMax}°C")
     }
 }
