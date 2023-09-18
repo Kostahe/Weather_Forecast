@@ -39,7 +39,8 @@ fun WeatherHomeScreen() {
         }
         is State.Success -> {
             Column(
-                Modifier.fillMaxSize()
+                Modifier
+                    .fillMaxSize()
             ) {
                 WeatherCurrentWeatherScreen(state = state)
                 WeatherHourlyData(state = state)
@@ -64,7 +65,6 @@ fun WeatherHomeScreen() {
                         textAlign = TextAlign.Center
                     )
                 }
-
             }
             Log.e("MyError", "Error message: ${weatherState.message}")
         }

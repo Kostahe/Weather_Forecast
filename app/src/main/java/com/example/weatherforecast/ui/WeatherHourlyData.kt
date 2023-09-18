@@ -27,8 +27,8 @@ fun WeatherHourlyData(
         Card(
             modifier.padding(16.dp)
         ) {
-            LazyRow() {
-                items(data!!.weatherInfo.subList(0, 25)) {
+            LazyRow(Modifier.padding(8.dp)) {
+                items(data!!.weatherInfo.subList(0, 24)) {
                     WeatherHourlyDataItem(weatherInfo = it)
                 }
             }
