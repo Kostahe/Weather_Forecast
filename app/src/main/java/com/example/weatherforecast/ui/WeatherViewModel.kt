@@ -9,6 +9,7 @@ import com.example.weatherforecast.domain.location.LocationTracker
 import com.example.weatherforecast.domain.repository.State
 import com.example.weatherforecast.domain.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,7 +22,7 @@ class WeatherViewModel @Inject constructor(
         private set
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             locationTracker.getCurrentLocation()?.let { location ->
                 state = WeatherState(repository.getWeatherData(location.latitude, location.longitude))
             } ?: kotlin.run {
