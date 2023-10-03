@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class LoggingInterceptor @Inject constructor(): HttpLoggingInterceptor.Logger {
     override fun log(message: String) {
-        Log.i("LoggingInterceptor", "log: $message")
+        Log.d("LoggingInterceptor", "log: $message")
     }
 }

@@ -27,4 +27,7 @@
     <string name="moderate_thunderstorm">Moderate thunderstorm</string>
     <string name="thunderstorm_with_slight_hail">Thunderstorm with slight hail</string>
     <string name="thunderstorm_with_heavy_hail">Thunderstorm with heavy hail</string>
+
+    <string name="pressure_unit">hpa</string>
+    <string name="wind_speed_unit">km/h</string>
 </resources>

@@ -16,5 +16,4 @@ class ApiWeatherMapper @Inject constructor(
             hourly = apiHourlyMapper.mapToDomain(apiEntity.hourly)
         )
     }
-
 }

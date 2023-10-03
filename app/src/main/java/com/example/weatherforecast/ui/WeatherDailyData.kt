@@ -2,6 +2,7 @@ package com.example.weatherforecast.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,10 +26,10 @@ fun WeatherDailyData(
 ) {
     state.weather.data?.daily?.let { data ->
         Card(modifier.padding(16.dp)) {
-            LazyColumn(
+            Column(
                 Modifier.fillMaxWidth()
             ) {
-                items(data.weatherInfo) {
+                data.weatherInfo.forEach {
                     WeatherDailyItem(weatherInfo = it)
                 }
             }
