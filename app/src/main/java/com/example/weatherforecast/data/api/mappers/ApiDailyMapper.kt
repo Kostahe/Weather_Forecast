@@ -11,18 +11,18 @@ class ApiDailyMapper @Inject constructor(): ApiMapper<Daily, ApiDaily>{
         return Daily(
             temperatureMax = apiEntity.temperatureMax,
             temperatureMin = apiEntity.temperatureMin,
-            time = parseTime(apiEntity.time),
-            weatherStatus = parseWeatherStatus(apiEntity.weatherCode)
+            time = formatTime(apiEntity.time),
+            weatherStatus = formatWeatherStatus(apiEntity.weatherCode)
         )
     }
 
-    private fun parseTime(time: List<Long>): List<String> {
+    private fun formatTime(time: List<Long>): List<String> {
          return time.map {
              FormatUtils.formatTime("E", it)
          }
     }
 
-    private fun parseWeatherStatus(weatherCode: List<Int>) : List<WeatherStatus> {
+    private fun formatWeatherStatus(weatherCode: List<Int>) : List<WeatherStatus> {
         return weatherCode.map {
             FormatUtils.getWeatherStatus(it)
         }

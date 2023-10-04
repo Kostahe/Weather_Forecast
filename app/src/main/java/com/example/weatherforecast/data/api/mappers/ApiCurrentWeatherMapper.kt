@@ -10,19 +10,19 @@ class ApiCurrentWeatherMapper @Inject constructor(): ApiMapper<CurrentWeather, A
     override fun mapToDomain(apiEntity: ApiCurrentWeather): CurrentWeather {
         return CurrentWeather(
             temperature = apiEntity.temperature,
-            time = parseTime(apiEntity.time),
-            day = parseDay(apiEntity.time),
-            weatherStatus = parseWeatherStatus(apiEntity.weatherCode),
+            time = formatTime(apiEntity.time),
+            day = formatDay(apiEntity.time),
+            weatherStatus = formatWeatherStatus(apiEntity.weatherCode),
             windSpeed = apiEntity.windSpeed
         )
     }
-    private fun parseTime(time: Long): String {
+    private fun formatTime(time: Long): String {
         return FormatUtils.formatTime("H", time)
     }
-    private fun parseDay(time: Long): String {
+    private fun formatDay(time: Long): String {
         return FormatUtils.formatTime("E", time)
     }
-    private fun parseWeatherStatus(weatherCode: Int): WeatherStatus {
+    private fun formatWeatherStatus(weatherCode: Int): WeatherStatus {
         return FormatUtils.getWeatherStatus(weatherCode)
     }
 

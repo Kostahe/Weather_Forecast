@@ -10,25 +10,25 @@ class ApiHourlyMapper @Inject constructor(): ApiMapper<Hourly, ApiHourly> {
     override fun mapToDomain(apiEntity: ApiHourly): Hourly {
         return Hourly(
             temperature = apiEntity.temperature,
-            time = parseTime(apiEntity.time),
-            day = parseDay(apiEntity.time),
-            weatherStatus = parseWeatherStatus(apiEntity.weatherCode),
+            time = formatTime(apiEntity.time),
+            day = formatDay(apiEntity.time),
+            weatherStatus = formatWeatherStatus(apiEntity.weatherCode),
             windSpeed = apiEntity.windSpeed
         )
     }
 
-    private fun parseTime(time: List<Long>): List<String> {
+    private fun formatTime(time: List<Long>): List<String> {
         return time.map {
             FormatUtils.formatTime("H", it)
         }
     }
-    private fun parseDay(time: List<Long>): List<String> {
+    private fun formatDay(time: List<Long>): List<String> {
         return time.map {
             FormatUtils.formatTime("E", it)
         }
     }
 
-    private fun parseWeatherStatus(weatherCode: List<Int>) : List<WeatherStatus> {
+    private fun formatWeatherStatus(weatherCode: List<Int>) : List<WeatherStatus> {
         return weatherCode.map {
             FormatUtils.getWeatherStatus(it)
         }
