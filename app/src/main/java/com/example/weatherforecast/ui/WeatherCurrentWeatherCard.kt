@@ -21,7 +21,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.weatherforecast.R
-import kotlin.reflect.jvm.internal.impl.resolve.constants.KClassValue.Value
 
 @Composable
 fun WeatherCurrentWeatherScreen(

@@ -9,7 +9,6 @@ import com.example.weatherforecast.domain.location.LocationTracker
 import com.example.weatherforecast.domain.repository.State
 import com.example.weatherforecast.domain.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
