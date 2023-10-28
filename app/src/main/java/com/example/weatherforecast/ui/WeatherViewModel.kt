@@ -22,7 +22,7 @@ class WeatherViewModel @Inject constructor(
         private set
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             locationTracker.getCurrentLocation()?.let { location ->
                 state = WeatherState(repository.getWeatherData(location.latitude, location.longitude))
             } ?: kotlin.run {
