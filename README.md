@@ -5,7 +5,7 @@ forecast for any location.</p>
 ## What I used for this app
 * <p><a href="https://developer.android.com/jetpack/compose">Jetpack compose</a> for ui </p>
 * <p><a href="https://dagger.dev/hilt/">Hilt</a> for depency injection</p>
-* <p><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</p>
+* <p>MVI</p>
 * <p><a href="https://kotlinlang.org/docs/coroutines-overview.html">Kotlin coroutines</a>
 ## App Icon
 ![Screenshot 2023-10-26 043937](https://github.com/Kostahe/Weather_Forecast/assets/113007546/053e0a45-98c4-40fa-9e9a-7de0b2fe17cb)
